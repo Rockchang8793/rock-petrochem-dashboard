@@ -18,12 +18,12 @@
       <button class="nav" data-view="c4"><span>03</span><b>C4 Pool</b><small>C4 V6.3</small></button>
       <button class="nav" data-view="olefins"><span>04</span><b>LPG · 烯烃</b><small>Chain Engine V1.2</small></button>
     </nav>
-    <div class="model-state"><i></i><div><b>数据已接入</b><small>Google Sheets 快照</small></div></div>
+    <div class="model-state"><i></i><div><b id="syncState">等待首次同步</b><small id="syncSource">腾讯文档 Open API</small></div></div>
   </aside>
   <main>
     <header>
       <div><p class="eyebrow">MARKET CONTROL ROOM</p><h1 id="pageTitle">产业决策总览</h1></div>
-      <div class="header-tools"><span class="update">LATEST SOURCE <b>2026-09-20</b></span><button id="theme" aria-label="切换深浅模式">◐</button></div>
+      <div class="header-tools"><span class="update">LATEST SYNC <b id="lastSync">等待同步</b></span><button id="theme" aria-label="切换深浅模式">◐</button></div>
     </header>
 
     <section id="overview" class="view active-view">
@@ -43,7 +43,7 @@
     </section>
 
     <section id="aromatics" class="view">
-      <div class="sourcebar"><div><span>AROMATICS TRADING V5.2</span><b>数据快照 2026-09-18</b></div><a href="https://docs.google.com/spreadsheets/d/1ibQXFFOuwgMvjR-BhbSYwUcY1JpL7_LQJbZNGkVvjH8/edit" target="_blank" rel="noopener">打开源表 ↗</a></div>
+      <div class="sourcebar"><div><span>AROMATICS TRADING V5.2</span><b id="aromaticsSync">等待 API 同步</b></div><a href="https://docs.qq.com/sheet/DQ1NtWHRIU0ZOd290?tab=000001" target="_blank" rel="noopener">打开腾讯源表 ↗</a></div>
       <div class="kpi-grid five"><article><span>PX CFR</span><b>1,291.67</b><small>USD/t</small></article><article><span>PXN</span><b>370.92</b><small>USD/t · 93.6%分位</small></article><article><span>PX-MX 外盘</span><b>103.67</b><small>USD/t · 22.2%分位</small></article><article><span>甲苯调油利润</span><b class="positive">929.47</b><small>RMB/t · 窗口打开</small></article><article><span>纯苯需求利润</span><b class="positive">1,695.56</b><small>RMB/t · 100%分位</small></article></div>
       <div class="panel-grid">
         <article class="panel wide"><div class="panel-title"><div><p>CHAIN SIGNALS</p><h2>产业链信号矩阵</h2></div><span class="muted">核心指标 / 状态 / 12M分位</span></div>
@@ -55,20 +55,20 @@
     </section>
 
     <section id="c4" class="view">
-      <div class="sourcebar"><div><span>C4 POOL DASHBOARD V6.3</span><b>最新有效日 2026-09-20</b></div><a href="https://docs.google.com/spreadsheets/d/1LSV0raW4-GxQbLyvLZl0ErnMLJAMLY3JoDd-KIyP7W8/edit" target="_blank" rel="noopener">打开源表 ↗</a></div>
+      <div class="sourcebar"><div><span>C4 POOL DASHBOARD V6.3</span><b id="c4Sync">等待 API 同步</b></div><a href="https://docs.qq.com/sheet/DQ3V1cFVYdGpBZGhI?tab=000002" target="_blank" rel="noopener">打开腾讯源表 ↗</a></div>
       <div class="kpi-grid four"><article><span>综合景气度</span><b>0.399</b><small>弱平衡 · 上月0.475</small></article><article><span>MTBE价格</span><b>8,000</b><small>RMB/t · +837 MoM</small></article><article><span>最强模块</span><b>MTBE供应</b><small>得分 0.511</small></article><article><span>最弱模块</span><b class="warning">下游消化</b><small>得分 0.223</small></article></div>
       <div class="panel-grid"><article class="panel wide"><div class="panel-title"><div><p>ROUTE ECONOMICS</p><h2>核心路线利润</h2></div><span class="muted">RMB/t · 当期</span></div><div id="c4Bars" class="bar-chart"></div></article><article class="panel"><div class="panel-title"><div><p>MODULE HEALTH</p><h2>模块健康度</h2></div></div><div class="gauges"><div><span>上游供给 / 价值</span><b>0.475</b><i><u style="width:47.5%"></u></i><small>中性偏强</small></div><div><span>MTBE 供应意愿</span><b>0.511</b><i><u style="width:51.1%"></u></i><small>中性偏强</small></div><div><span>下游 C4 消化</span><b>0.223</b><i><u style="width:22.3%"></u></i><small>弱平衡</small></div></div><div class="alert">人工评分复核已超过 14 天，当前信号需结合最新供需判断。</div></article></div>
       <div class="route-cards"><article><span>表现最佳</span><b>PO/TBA 联产</b><strong class="positive">+4,999</strong><small>较上月 +1,097</small></article><article><span>稳定盈利</span><b>气分法 MTBE</b><strong class="positive">+1,622</strong><small>较上月 -9</small></article><article><span>主要风险</span><b>顺酐 → BDO</b><strong class="negative">-2,038</strong><small>延续深度亏损</small></article></div>
     </section>
 
     <section id="olefins" class="view">
-      <div class="sourcebar"><div><span>NAPHTHA & LPG CHAIN ENGINE V1.2</span><b>价格快照 2026-09-10</b></div><a href="https://docs.google.com/spreadsheets/d/1BQ29s2wjJiWj8YGRt-NqNiXEI7-oFfIUlJL1BOjhnfc/edit" target="_blank" rel="noopener">打开源表 ↗</a></div>
+      <div class="sourcebar"><div><span>NAPHTHA & LPG CHAIN ENGINE V1.2</span><b id="olefinsSync">等待 API 同步</b></div><a href="https://docs.qq.com/sheet/DQ3BPQkpaa2pKRG9U?tab=000001" target="_blank" rel="noopener">打开腾讯源表 ↗</a></div>
       <div class="kpi-grid five"><article><span>石脑油裂解</span><b class="negative">-3,161</b><small>RMB/t naphtha</small></article><article><span>PDH</span><b class="negative">-235</b><small>RMB/t propylene</small></article><article><span>LLDPE</span><b class="positive">+90</b><small>RMB/t</small></article><article><span>PP</span><b class="positive">+8,790</b><small>RMB/t</small></article><article><span>一体化利润</span><b class="negative">-3,161</b><small>RMB/t feed</small></article></div>
       <div class="panel-grid"><article class="panel wide"><div class="panel-title"><div><p>DOWNSTREAM MARGIN MAP</p><h2>C2 / C3 下游加工利润</h2></div><div class="tabs"><button class="active" data-chain="c2">C2</button><button data-chain="c3">C3</button></div></div><div id="marginBars" class="margin-bars"></div></article><article class="panel"><div class="panel-title"><div><p>FEEDSTOCK BRIDGE</p><h2>关键原料基准</h2></div></div><dl class="benchmarks"><div><dt>石脑油模型成本</dt><dd>7,088<small>RMB/t</small></dd></div><div><dt>进口丙烷</dt><dd>1,012<small>RMB/t</small></dd></div><div><dt>乙烯</dt><dd>9,050<small>RMB/t</small></dd></div><div><dt>丙烯</dt><dd>1,000<small>RMB/t</small></dd></div><div><dt>PyGas 理论价值</dt><dd>5,452<small>RMB/t</small></dd></div></dl></article></div>
       <div class="simulator"><div><p>10,000吨石脑油基准情景</p><h2>当前一体化总利润</h2></div><strong class="negative">-31.61<small>百万元</small></strong><span>当前下游分配比例为 0，未形成 C2/C3 增值；利润等于基础裂解总利润。</span></div>
       <p class="data-note">历史利润区尚未形成有效周度样本，因此本页暂不展示环比与趋势。录入 Weekly Update 快照后可继续扩展。</p>
     </section>
-    <footer><span>ROCK CHANG · PETROCHEMICAL TRADING & OPTIMIZATION</span><span>数据来自三张 Google Sheet 模型快照 · 不构成交易建议</span></footer>
+    <footer><span>ROCK CHANG · PETROCHEMICAL TRADING & OPTIMIZATION</span><span>腾讯文档 Open API 自动检查 · 当前指标沿用已审核快照 · 不构成交易建议</span></footer>
   </main>
   <script src="app.js"></script>
 </body>
