@@ -23,7 +23,7 @@ function findSheet(payload) {
 
 function dimensions(payload) {
   const sheet = findSheet(payload);
-  if (!sheet) throw new Error("Unrecognized Tencent Docs response structure");
+  if (!sheet) { const top = Object.keys(payload || {}).join(","); const nested = Object.keys(payload?.data || {}).join(","); throw new Error(`Unrecognized Tencent Docs response structure; top=[${top}] data=[${nested}]`); }
   if (Array.isArray(sheet.values)) {
     return {
       rowCount: sheet.values.length,
