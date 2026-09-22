@@ -3,7 +3,7 @@ name: Sync Tencent Docs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 * * * *"
+    # 11:00 Asia/Shanghai (UTC+8)\n    - cron: "0 3 * * *"
   push:
     branches:
       - main
