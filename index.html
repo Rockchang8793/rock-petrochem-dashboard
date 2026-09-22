@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Rock Chang 石化产业决策看板：芳烃、C4 Pool、LPG 与烯烃利润监控。">
+  <meta name="theme-color" content="#07131d">
+  <title>Rock Chang · Petrochemical Intelligence</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307131d'/%3E%3Cpath d='M14 45V19h19c10 0 16 4 16 13S43 45 33 45H14Zm10-8h9c4 0 6-2 6-5s-2-5-6-5h-9v10Z' fill='%2332e0ad'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brandmark">RC</span><span><strong>ROCK CHANG</strong><small>PETROCHEM INTELLIGENCE</small></span></div>
+    <nav aria-label="主要导航">
+      <button class="nav active" data-view="overview"><span>01</span><b>总览</b><small>Control room</small></button>
+      <button class="nav" data-view="aromatics"><span>02</span><b>芳烃</b><small>Aromatics V5.2</small></button>
+      <button class="nav" data-view="c4"><span>03</span><b>C4 Pool</b><small>C4 V6.3</small></button>
+      <button class="nav" data-view="olefins"><span>04</span><b>LPG · 烯烃</b><small>Chain Engine V1.2</small></button>
+    </nav>
+    <div class="model-state"><i></i><div><b>数据已接入</b><small>Google Sheets 快照</small></div></div>
+  </aside>
+  <main>
+    <header>
+      <div><p class="eyebrow">MARKET CONTROL ROOM</p><h1 id="pageTitle">产业决策总览</h1></div>
+      <div class="header-tools"><span class="update">LATEST SOURCE <b>2026-09-20</b></span><button id="theme" aria-label="切换深浅模式">◐</button></div>
+    </header>
+
+    <section id="overview" class="view active-view">
+      <div class="brief"><div><span class="pulse"></span><b>本期核心观察</b></div><p>甲苯调油窗口强，纯苯下游承接好；C4 链条转弱，MTBE 供应路线分化；石脑油裂解与 PDH 均处亏损。</p></div>
+      <div class="snapshot-grid">
+        <button class="snapshot aroma" data-jump="aromatics"><div class="snapshot-top"><span>芳烃链</span><em>09·18</em></div><strong>结构分化</strong><p>PXN 高分位，TOL 调油窗口打开；PTA、SM 模型观点偏空</p><footer><span class="signal observe">观察</span><i>查看详情 →</i></footer></button>
+        <button class="snapshot c4tone" data-jump="c4"><div class="snapshot-top"><span>C4 Pool</span><em>09·20</em></div><strong>弱平衡</strong><p>综合景气度 0.399；下游消化仍是当前主要风险</p><footer><span class="signal risk">转弱</span><i>查看详情 →</i></footer></button>
+        <button class="snapshot olefin" data-jump="olefins"><div class="snapshot-top"><span>LPG · 烯烃</span><em>09·10</em></div><strong>上游承压</strong><p>裂解 -3,161；PDH -235；下游加工利润明显分化</p><footer><span class="signal risk">亏损</span><i>查看详情 →</i></footer></button>
+      </div>
+      <div class="section-head"><div><p>DECISION BOARD</p><h2>优先关注</h2></div><span>按交易相关性排序</span></div>
+      <div class="decision-grid">
+        <article class="decision"><span class="rank">01</span><div><h3>甲苯汽油调和窗口</h3><p>调和利润 <b class="positive">+929</b> RMB/t，12M 分位 <b>100%</b>。甲苯消费支撑是芳烃链中最明确的正向信号。</p></div><em class="up">强支撑</em></article>
+        <article class="decision"><span class="rank">02</span><div><h3>C4 下游消化偏弱</h3><p>模块得分仅 <b class="warning">0.223</b>；烷基化、顺酐和 BDO 路线均亏损，1-丁烯分离仍盈利。</p></div><em class="down">风险</em></article>
+        <article class="decision"><span class="rank">03</span><div><h3>裂解链缺乏利润支撑</h3><p>石脑油裂解 <b class="negative">-3,161</b> RMB/t，PDH <b class="negative">-235</b> RMB/t，基础原料端承压。</p></div><em class="down">亏损</em></article>
+      </div>
+      <div class="metric-strip"><div><span>PXN</span><b>370.9</b><small>USD/t · 93.6%分位</small></div><div><span>MTBE</span><b>8,000</b><small>RMB/t · C4表</small></div><div><span>C4景气度</span><b>0.399</b><small>弱平衡</small></div><div><span>综合裂解利润</span><b class="negative">-3,161</b><small>RMB/t feed</small></div></div>
+    </section>
+
+    <section id="aromatics" class="view">
+      <div class="sourcebar"><div><span>AROMATICS TRADING V5.2</span><b>数据快照 2026-09-18</b></div><a href="https://docs.google.com/spreadsheets/d/1ibQXFFOuwgMvjR-BhbSYwUcY1JpL7_LQJbZNGkVvjH8/edit" target="_blank" rel="noopener">打开源表 ↗</a></div>
+      <div class="kpi-grid five"><article><span>PX CFR</span><b>1,291.67</b><small>USD/t</small></article><article><span>PXN</span><b>370.92</b><small>USD/t · 93.6%分位</small></article><article><span>PX-MX 外盘</span><b>103.67</b><small>USD/t · 22.2%分位</small></article><article><span>甲苯调油利润</span><b class="positive">929.47</b><small>RMB/t · 窗口打开</small></article><article><span>纯苯需求利润</span><b class="positive">1,695.56</b><small>RMB/t · 100%分位</small></article></div>
+      <div class="panel-grid">
+        <article class="panel wide"><div class="panel-title"><div><p>CHAIN SIGNALS</p><h2>产业链信号矩阵</h2></div><span class="muted">核心指标 / 状态 / 12M分位</span></div>
+          <div class="signal-table"><div class="thead"><span>产品链</span><span>核心指标</span><span>当前值</span><span>12M分位</span><span>模型观点</span></div><div><b>PX / MX</b><span>国内 PX 加工动力</span><strong>746.2</strong><span><i style="--p:40.6%"></i>40.6%</span><em class="observe">观察</em></div><div><b>PTA / 聚酯</b><span>PTA 加工费</span><strong>429.9</strong><span><i style="--p:95.9%"></i>95.9%</span><em class="risk">做空</em></div><div><b>纯苯</b><span>下游需求利润</span><strong>1,695.6</strong><span><i style="--p:100%"></i>100%</span><em class="observe">观察</em></div><div><b>甲苯</b><span>歧化开工动力</span><strong>147.5</strong><span><i style="--p:39.2%"></i>39.2%</span><em class="observe">观察</em></div><div><b>苯乙烯</b><span>供应利润</span><strong class="negative">-285.0</strong><span><i style="--p:48%"></i>48.0%</span><em class="risk">做空</em></div></div>
+        </article>
+        <article class="panel"><div class="panel-title"><div><p>FLOW MAP</p><h2>流向判断</h2></div></div><ul class="insights"><li><i class="green-dot"></i><div><b>TOL 消耗增加</b><span>汽油调和窗口打开，形成消费支撑</span></div></li><li><i class="amber-dot"></i><div><b>TDP 有开工动力</b><span>MX 消耗与纯苯副产供应同步增加</span></div></li><li><i class="red-dot"></i><div><b>聚酯承接偏弱</b><span>加权利润 -70.2 RMB/t</span></div></li><li><i class="red-dot"></i><div><b>SM 两端承压</b><span>供应利润 -285，需求利润 -111</span></div></li></ul></article>
+      </div>
+      <p class="data-note">模型提示：当前输入存在缺失，27 个报价为历史沿用；计算检查状态为 OK。判断时应结合数据日期。</p>
+    </section>
+
+    <section id="c4" class="view">
+      <div class="sourcebar"><div><span>C4 POOL DASHBOARD V6.3</span><b>最新有效日 2026-09-20</b></div><a href="https://docs.google.com/spreadsheets/d/1LSV0raW4-GxQbLyvLZl0ErnMLJAMLY3JoDd-KIyP7W8/edit" target="_blank" rel="noopener">打开源表 ↗</a></div>
+      <div class="kpi-grid four"><article><span>综合景气度</span><b>0.399</b><small>弱平衡 · 上月0.475</small></article><article><span>MTBE价格</span><b>8,000</b><small>RMB/t · +837 MoM</small></article><article><span>最强模块</span><b>MTBE供应</b><small>得分 0.511</small></article><article><span>最弱模块</span><b class="warning">下游消化</b><small>得分 0.223</small></article></div>
+      <div class="panel-grid"><article class="panel wide"><div class="panel-title"><div><p>ROUTE ECONOMICS</p><h2>核心路线利润</h2></div><span class="muted">RMB/t · 当期</span></div><div id="c4Bars" class="bar-chart"></div></article><article class="panel"><div class="panel-title"><div><p>MODULE HEALTH</p><h2>模块健康度</h2></div></div><div class="gauges"><div><span>上游供给 / 价值</span><b>0.475</b><i><u style="width:47.5%"></u></i><small>中性偏强</small></div><div><span>MTBE 供应意愿</span><b>0.511</b><i><u style="width:51.1%"></u></i><small>中性偏强</small></div><div><span>下游 C4 消化</span><b>0.223</b><i><u style="width:22.3%"></u></i><small>弱平衡</small></div></div><div class="alert">人工评分复核已超过 14 天，当前信号需结合最新供需判断。</div></article></div>
+      <div class="route-cards"><article><span>表现最佳</span><b>PO/TBA 联产</b><strong class="positive">+4,999</strong><small>较上月 +1,097</small></article><article><span>稳定盈利</span><b>气分法 MTBE</b><strong class="positive">+1,622</strong><small>较上月 -9</small></article><article><span>主要风险</span><b>顺酐 → BDO</b><strong class="negative">-2,038</strong><small>延续深度亏损</small></article></div>
+    </section>
+
+    <section id="olefins" class="view">
+      <div class="sourcebar"><div><span>NAPHTHA & LPG CHAIN ENGINE V1.2</span><b>价格快照 2026-09-10</b></div><a href="https://docs.google.com/spreadsheets/d/1BQ29s2wjJiWj8YGRt-NqNiXEI7-oFfIUlJL1BOjhnfc/edit" target="_blank" rel="noopener">打开源表 ↗</a></div>
+      <div class="kpi-grid five"><article><span>石脑油裂解</span><b class="negative">-3,161</b><small>RMB/t naphtha</small></article><article><span>PDH</span><b class="negative">-235</b><small>RMB/t propylene</small></article><article><span>LLDPE</span><b class="positive">+90</b><small>RMB/t</small></article><article><span>PP</span><b class="positive">+8,790</b><small>RMB/t</small></article><article><span>一体化利润</span><b class="negative">-3,161</b><small>RMB/t feed</small></article></div>
+      <div class="panel-grid"><article class="panel wide"><div class="panel-title"><div><p>DOWNSTREAM MARGIN MAP</p><h2>C2 / C3 下游加工利润</h2></div><div class="tabs"><button class="active" data-chain="c2">C2</button><button data-chain="c3">C3</button></div></div><div id="marginBars" class="margin-bars"></div></article><article class="panel"><div class="panel-title"><div><p>FEEDSTOCK BRIDGE</p><h2>关键原料基准</h2></div></div><dl class="benchmarks"><div><dt>石脑油模型成本</dt><dd>7,088<small>RMB/t</small></dd></div><div><dt>进口丙烷</dt><dd>1,012<small>RMB/t</small></dd></div><div><dt>乙烯</dt><dd>9,050<small>RMB/t</small></dd></div><div><dt>丙烯</dt><dd>1,000<small>RMB/t</small></dd></div><div><dt>PyGas 理论价值</dt><dd>5,452<small>RMB/t</small></dd></div></dl></article></div>
+      <div class="simulator"><div><p>10,000吨石脑油基准情景</p><h2>当前一体化总利润</h2></div><strong class="negative">-31.61<small>百万元</small></strong><span>当前下游分配比例为 0，未形成 C2/C3 增值；利润等于基础裂解总利润。</span></div>
+      <p class="data-note">历史利润区尚未形成有效周度样本，因此本页暂不展示环比与趋势。录入 Weekly Update 快照后可继续扩展。</p>
+    </section>
+    <footer><span>ROCK CHANG · PETROCHEMICAL TRADING & OPTIMIZATION</span><span>数据来自三张 Google Sheet 模型快照 · 不构成交易建议</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
