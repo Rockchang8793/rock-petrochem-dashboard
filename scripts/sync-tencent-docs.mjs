@@ -14,7 +14,7 @@ const documents = [
 function findSheet(payload) {
   return [
     payload?.data?.sheets?.[0], payload?.sheets?.[0], payload?.data?.sheet,
-    payload?.sheet, payload?.data, payload
+    payload?.sheet, payload?.gridData, Array.isArray(payload?.gridData) ? { data: payload.gridData } : null, payload?.data, payload
   ].find((item) => item && (
     Array.isArray(item.data) || Array.isArray(item.rows) ||
     Array.isArray(item.rowData) || Array.isArray(item.values)
