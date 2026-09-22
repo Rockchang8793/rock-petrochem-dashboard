@@ -6,9 +6,9 @@ for (const name of required) {
 }
 
 const documents = [
-  { key: "aromatics", title: "Aromatics Trading V5.2 Rock Chang", fileId: "DQ1NtWHRIU0ZOd290", sheetId: "000001", range: "A1:GR1000", url: "https://docs.qq.com/sheet/DQ1NtWHRIU0ZOd290?tab=000001" },
-  { key: "c4", title: "C4 Pool MTBE Optimizaer V6.3 RockChang", fileId: "DQ3V1cFVYdGpBZGhI", sheetId: "000002", range: "A1:GR1000", url: "https://docs.qq.com/sheet/DQ3V1cFVYdGpBZGhI?tab=000002" },
-  { key: "olefins", title: "Napt&LPG Chain Engine V1.2 RockChang", fileId: "DQ3BPQkpaa2pKRG9U", sheetId: "000001", range: "A1:GR1000", url: "https://docs.qq.com/sheet/DQ3BPQkpaa2pKRG9U?tab=000001" },
+  { key: "aromatics", title: "Aromatics Trading V5.2 Rock Chang", fileId: "DQ1NtWHRIU0ZOd290", sheetId: "000001", range: "A1:AZ100", url: "https://docs.qq.com/sheet/DQ1NtWHRIU0ZOd290?tab=000001" },
+  { key: "c4", title: "C4 Pool MTBE Optimizaer V6.3 RockChang", fileId: "DQ3V1cFVYdGpBZGhI", sheetId: "000002", range: "A1:AZ100", url: "https://docs.qq.com/sheet/DQ3V1cFVYdGpBZGhI?tab=000002" },
+  { key: "olefins", title: "Napt&LPG Chain Engine V1.2 RockChang", fileId: "DQ3BPQkpaa2pKRG9U", sheetId: "000001", range: "A1:AZ100", url: "https://docs.qq.com/sheet/DQ3BPQkpaa2pKRG9U?tab=000001" },
 ];
 
 function findSheet(payload) {
