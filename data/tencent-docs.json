@@ -1,6 +1,35 @@
 {
-  "generatedAt": null,
+  "generatedAt": "2026-09-22T03:36:54.249Z",
   "source": "Tencent Docs Open API v3",
-  "status": "pending",
-  "documents": {}
+  "status": "connected",
+  "note": "Connectivity metadata only; no spreadsheet cell values are published.",
+  "documents": {
+    "aromatics": {
+      "title": "Aromatics Trading V5.2 Rock Chang",
+      "url": "https://docs.qq.com/sheet/DQ1NtWHRIU0ZOd290?tab=000001",
+      "fileId": "DQ1NtWHRIU0ZOd290",
+      "sheetId": "000001",
+      "status": "connected",
+      "rowCount": 100,
+      "columnCount": 52
+    },
+    "c4": {
+      "title": "C4 Pool MTBE Optimizaer V6.3 RockChang",
+      "url": "https://docs.qq.com/sheet/DQ3V1cFVYdGpBZGhI?tab=000002",
+      "fileId": "DQ3V1cFVYdGpBZGhI",
+      "sheetId": "000002",
+      "status": "connected",
+      "rowCount": 100,
+      "columnCount": 52
+    },
+    "olefins": {
+      "title": "Napt&LPG Chain Engine V1.2 RockChang",
+      "url": "https://docs.qq.com/sheet/DQ3BPQkpaa2pKRG9U?tab=000001",
+      "fileId": "DQ3BPQkpaa2pKRG9U",
+      "sheetId": "000001",
+      "status": "connected",
+      "rowCount": 100,
+      "columnCount": 52
+    }
+  }
 }
