@@ -8,3 +8,36 @@ const c4max=Math.max(...c4.map(x=>Math.abs(x[1])));document.getElementById('c4Ba
 const chains={c2:[['石脑油裂解',-3161],['LLDPE',90],['HDPE',778],['LDPE',2219],['MEG',-120],['苯乙烯',-775],['PVC',-1875]],c3:[['PDH',-235],['PP',8790],['丙烯腈',7704],['HPPO',8799],['丙烯酸',6590],['正丁醇',7100],['辛醇',7375],['丙烯酸丁酯',-2518],['酚酮联产',3508],['MMA',246],['DOTP',-3],['DOP',-1756]]};
 function renderMargins(chain){const rows=chains[chain],max=Math.max(...rows.map(x=>Math.abs(x[1])));document.getElementById('marginBars').innerHTML=rows.map(([n,v])=>`<div class="margin-row"><span>${n}</span><div class="margin-track"><i class="${v<0?'neg':''}" style="--w:${Math.abs(v)/max*100}"></i></div><strong class="${v<0?'negative':'positive'}">${v>0?'+':''}${v.toLocaleString()}</strong></div>`).join('')}
 renderMargins('c2');document.querySelectorAll('[data-chain]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-chain]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');renderMargins(btn.dataset.chain)}));
+
+async function loadTencentSyncState(){
+  const state=document.getElementById('syncState');
+  const source=document.getElementById('syncSource');
+  const latest=document.getElementById('lastSync');
+  try{
+    const response=await fetch('data/tencent-docs.json?v='+Date.now(),{cache:'no-store'});
+    if(!response.ok) throw new Error('sync status unavailable');
+    const data=await response.json();
+    if(!data.generatedAt||data.status==='pending'){
+      state.textContent='等待首次同步';
+      source.textContent='腾讯文档 Open API';
+      return;
+    }
+    const timestamp=new Date(data.generatedAt);
+    const formatted=new Intl.DateTimeFormat('zh-CN',{
+      timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',
+      hour:'2-digit',minute:'2-digit',hour12:false
+    }).format(timestamp);
+    latest.textContent=formatted;
+    state.textContent=data.status==='connected'?'数据连接正常':'同步状态异常';
+    source.textContent='腾讯文档 Open API';
+    for(const [key,document] of Object.entries(data.documents||{})){
+      const target=document.getElementById(key+'Sync');
+      if(target) target.textContent=`API 已连接 · ${document.rowCount} 行 × ${document.columnCount} 列`;
+    }
+  }catch(error){
+    state.textContent='同步数据暂不可用';
+    source.textContent='保留已审核快照';
+    latest.textContent='连接检查失败';
+  }
+}
+loadTencentSyncState();
